@@ -1,0 +1,10 @@
+# Folders
+dist
+build
+.ipynb_checkpoints
+__pycache__
+
+# Files
+Freight Matrix 2020.xlsx
+FM Preferred Carriers.spec
+Carrier Choice - *.xlsx
