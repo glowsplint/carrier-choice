@@ -14,7 +14,7 @@ This script takes in a Freight Matrix file in the same directory as the executab
 
 # Get BAF Month from user
 print('Please specify a 3-letter BAF month and press Enter to submit your selection. (e.g. jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec)')
-baf_month = input()
+baf_month = input().lower().strip()
 
 allowed_months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun',
                   'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
@@ -30,7 +30,7 @@ files = list(Path(os.getcwd()).glob('Freight Matrix *.xlsx'))
 if len(files) == 1:
     df = pd.read_excel(files[0].name, header=1)
 else:
-    error = 'There are multiple Freight Matrix files that fit the pattern, or no suitable Freight Matrix files! Please include only one in the same directory as this script with the naming pattern of "Freight Matrix - *.xlsx".'
+    error = 'There are multiple Freight Matrix files that fit the pattern, or no suitable Freight Matrix files! Please include only one in the same directory as this script with the naming pattern of "Freight Matrix *.xlsx".'
     print(error)
     input()
     raise FileExistsError(error)
